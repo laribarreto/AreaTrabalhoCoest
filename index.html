@@ -24,5 +24,21 @@
         <a href="https://web.whatsapp.com/" target="_blank">Whatsapp</a>
         <a href="https://mail.google.com/mail/u/1/#inbox" target="_blank">Gmail</a>
         <a href="https://instagram.com" target="_blank">Instagram</a>
+
+        <div id="relogio"></div>
+
+        <script>
+            function atualizarRelogio() {
+                const agora = new Date();
+                let horas = String(agora.getHours()).padStart(2, '0');
+                let minutos = String(agora.getMinutes()).padStart(2, '0');
+                let segundos = String(agora.getSeconds()).padStart(2, '0');
+
+                document.getElementById("relogio").textContent = `${horas}:${minutos}:${segundos}`;
+            }
+
+            setInterval(atualizarRelogio, 1000);
+            atualizarRelogio();
+        </script>
     </body>
 </html>
